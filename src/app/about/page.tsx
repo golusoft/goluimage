@@ -19,7 +19,7 @@ export default function AboutPage() {
         </h1>
         <div className="mt-8 space-y-6 text-muted-foreground leading-relaxed text-lg">
           <p>
-            GoluImages started with a simple frustration: every "free" image tool on the web wanted my email, throttled my files, and quietly uploaded everything I touched. Modern browsers can do all of this work locally — so we built a product that does.
+            GoluImages started with a simple frustration: every &quot;free&quot; image tool on the web wanted my email, throttled my files, and quietly uploaded everything I touched. Modern browsers can do all of this work locally — so we built a product that does.
           </p>
           <p>
             Today, GoluImages is 30+ blazing-fast image utilities running entirely in your browser. No signup. No upload limits. No data leaving your device. Funded by tasteful ads and optional affiliate links so the product can stay free, forever.

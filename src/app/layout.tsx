@@ -10,7 +10,8 @@ import { jsonLdScript, organizationLD } from "@/lib/seo";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 
-export const metadata: Metadata = buildMetadata({
+export const metadata: Metadata = {
+  ...buildMetadata({
   title: "GoluImages — Free Online Image Tools (Compress, Resize, Convert)",
   description:
     "30+ powerful free image tools that run in your browser. Compress, resize, crop, convert, watermark and remove backgrounds — no signup, no upload limits.",
@@ -23,7 +24,11 @@ export const metadata: Metadata = buildMetadata({
     "online image converter",
     "remove background",
   ],
-});
+  }),
+  verification: {
+    google: "T2Ttwg1aoevlBfBEOrjv43lpt07yc_q0V81CvfuKAvE",
+  },
+};
 
 export const viewport: Viewport = {
   themeColor: [
@@ -36,12 +41,10 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   const gaId = process.env.NEXT_PUBLIC_GA_ID;
-  const gscVerification = process.env.NEXT_PUBLIC_GSC_VERIFICATION;
 
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {gscVerification && <meta name="google-site-verification" content={gscVerification} />}
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="manifest" href="/manifest.webmanifest" />
         <script type="application/ld+json" dangerouslySetInnerHTML={jsonLdScript(organizationLD())} />

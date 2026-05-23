@@ -85,11 +85,11 @@ export function ScreenshotToPdfTool() {
 // Minimal PDF builder for JPEG pages.
 function buildPdf(pages: { jpeg: ArrayBuffer; w: number; h: number }[]): Blob {
   const enc = new TextEncoder();
-  const objs: Uint8Array[] = [];
+  const objs: BlobPart[] = [];
   const offsets: number[] = [];
   let pos = 0;
   const push = (chunk: Uint8Array) => {
-    objs.push(chunk);
+    objs.push(chunk as BlobPart);
     pos += chunk.byteLength;
   };
   push(enc.encode("%PDF-1.4\n%\xff\xff\xff\xff\n"));

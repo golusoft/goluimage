@@ -7,6 +7,7 @@ import { SiteChrome } from "@/components/layout/site-chrome";
 import { Toaster } from "sonner";
 import { buildMetadata } from "@/lib/seo";
 import { jsonLdScript, organizationLD } from "@/lib/seo";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = buildMetadata({
@@ -58,7 +59,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             </Script>
           </>
         )}
-        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
